@@ -1,16 +1,17 @@
 import "./App.css";
 import Navbars from "./components/Navbar";
-import Home from "./components/Home";
 import Wisata from "./components/Wisata";
+import Banner from "./Pages/Banner";
 
 function App() {
   return (
     <div className="body">
       <Navbars />
-        <Home />
+        <Banner />
       <div>
       </div>
       <Wisata/>
+      
     </div>
   );
 }
