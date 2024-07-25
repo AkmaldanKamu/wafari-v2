@@ -1,19 +1,23 @@
 import { useState, useEffect } from 'react';
 import { Navbar } from 'flowbite-react';
 
-function Navbars() {
+const MyNavbar = () => {
   const [isSticky, setIsSticky] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > 50) {
+      setIsSticky(true);
+      setIsVisible(true);
+    } else {
+      setIsSticky(false);
+      setIsVisible(false);
+    }
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsSticky(window.scrollY > 5);
-    };
-
     window.addEventListener('scroll', handleScroll);
-
-    // Initial check
-    handleScroll();
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -21,30 +25,34 @@ function Navbars() {
 
   return (
     <div
-      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ease-in-out ${
-        isSticky ? 'bg-white backdrop-blur-md opacity-75 shadow-md' : 'opacity-60'
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ease-in-out text-white ${
+        isSticky ? 'bg-black backdrop-blur-md opacity-95 shadow-md ' : 'opacity-100 '
       }`}
-    >
-      <Navbar fluid={true} rounded={true} className="w-full">
-        <Navbar.Brand href="https://flowbite-react.com">
-          <img src="/wafari.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white font-wafari">WAFARI</span>
-        </Navbar.Brand>
+    > 
+      <Navbar fluid={true} rounded={true} className="w-full bg-transparent">
+        <div className={`transition-opacity duration-100 ${isVisible ? 'opacity-100' : 'opacity-100'}`}>
+          <Navbar.Brand href="https://flowbite-react.com">
+            <img
+              src="/wafari.png"
+              className="mr-3 h-6 sm:h-9"
+              alt="Flowbite React Logo"
+            />
+            <span className="self-center whitespace-nowrap text-xl font-semibold text-dark font-wafari opacity-100 ">
+              WAFARI
+            </span>
+          </Navbar.Brand>
+        </div>
         <Navbar.Toggle />
-        <Navbar.Collapse>
-          <Navbar.Link href="#" active>
+        <Navbar.Collapse className="opacity-100">
+          <Navbar.Link href="#" className="text-white">
             BERANDA
           </Navbar.Link>
-          <Navbar.Link href="#">
-            DETAIL
-          </Navbar.Link>
-          <Navbar.Link href="#">
-            PROFIL
-          </Navbar.Link>
+          <Navbar.Link href="#" className="text-white">DETAIL</Navbar.Link>
+          <Navbar.Link href="#" className="text-white">PROFIL</Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
     </div>
   );
-}
+};
 
-export default Navbars;
+export default MyNavbar;
