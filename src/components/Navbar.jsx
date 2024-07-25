@@ -26,7 +26,7 @@ const MyNavbar = () => {
   return (
     <div
       className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ease-in-out text-white ${
-        isSticky ? 'bg-black backdrop-blur-md opacity-95 shadow-md ' : 'opacity-100 '
+        isSticky ? 'bg-transparent backdrop-blur-md opacity-95 shadow-md ' : 'opacity-100 '
       }`}
     > 
       <Navbar fluid={true} rounded={true} className="w-full bg-transparent">
