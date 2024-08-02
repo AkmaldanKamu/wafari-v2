@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Navbar } from 'flowbite-react';
+import { Banner, Navbar } from 'flowbite-react';
 
 const MyNavbar = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -25,10 +25,12 @@ const MyNavbar = () => {
 
   return (
     <div
-      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ease-in-out text-white ${
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 px-5 ease-in-out text-white ${
         isSticky ? 'bg-transparent backdrop-blur-md opacity-95 shadow-md ' : 'opacity-100 '
       }`}
     > 
+
+
       <Navbar fluid={true} rounded={true} className="w-full bg-transparent">
         <div className={`transition-opacity duration-100 ${isVisible ? 'opacity-100' : 'opacity-100'}`}>
           <Navbar.Brand href="https://flowbite-react.com">
