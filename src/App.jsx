@@ -1,22 +1,24 @@
-import "./App.css";
-import Navbars from "./components/Navbar";
-import Banner from "./Pages/Banner";
-import Isi from "./components/Isi";
-import Beranda from "./Pages/Beranda";
-import { Options } from "./components/Models/Options";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Index";
+import Navbars from "./Components/Navbar";
+import Detail from "./Pages/Detail";
+import Profil from "./Pages/Profil";
+import Footer from "./Components/Footer";
+import "./App.css"
 
 function App() {
   return (
-    <div>
-      <Navbars />
-      <Banner />
-      <div>
-        <Isi />
-      </div>
-      <Beranda/>
-      <Options text="Tes" />
-      <Options text="Tessssssssss" />
-
+    <div className="bg-slate-400">
+      <Router>
+        <Navbars />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/detail" element={<Detail />} />
+          <Route path="/profil" element={<Profil />} />
+        </Routes>
+        <Footer/>
+      </Router>
     </div>
   );
 }

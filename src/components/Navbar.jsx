@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { Banner, Navbar } from 'flowbite-react';
+import { useState, useEffect } from "react";
+import { Banner, Navbar } from "flowbite-react";
 
-const MyNavbar = () => {
+const Navbars = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -17,22 +17,26 @@ const MyNavbar = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <div
-      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 p-5 px-5 ease-in-out text-white ${
-        isSticky ? 'bg-transparent backdrop-blur-md opacity-95 shadow-md ' : 'opacity-100 '
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 px-5 ease-in-out text-white ${
+        isSticky
+          ? "bg-transparent backdrop-blur-md opacity-95 shadow-md "
+          : "opacity-100 "
       }`}
-    > 
-
-
+    >
       <Navbar fluid={true} rounded={true} className="w-full bg-transparent">
-        <div className={`transition-opacity duration-100 ${isVisible ? 'opacity-100' : 'opacity-100'}`}>
+        <div
+          className={`transition-opacity duration-100 ${
+            isVisible ? "opacity-100" : "opacity-100"
+          }`}
+        >
           <Navbar.Brand href="https://flowbite-react.com">
             <img
               src="/wafari.png"
@@ -45,16 +49,20 @@ const MyNavbar = () => {
           </Navbar.Brand>
         </div>
         <Navbar.Toggle />
-        <Navbar.Collapse className="opacity-100">
-          <Navbar.Link href="#" className="text-white">
+        <Navbar.Collapse>
+          <Navbar.Link href="#" className="text-white bg-transparent backdrop-blur-md opacity-100 shadow-md">
             BERANDA
           </Navbar.Link>
-          <Navbar.Link href="#" className="text-white">DETAIL</Navbar.Link>
-          <Navbar.Link href="#" className="text-white">PROFIL</Navbar.Link>
+          <Navbar.Link href="#" className="text-white bg-transparent backdrop-blur-md opacity-100 shadow-md">
+            DETAIL
+          </Navbar.Link>
+          <Navbar.Link href="#" className="text-white bg-transparent backdrop-blur-md opacity-100 shadow-md">
+            PROFIL
+          </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
     </div>
   );
 };
 
-export default MyNavbar;
+export default Navbars;
