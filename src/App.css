@@ -48,10 +48,13 @@ nav{
 }
 
 .isi h1{
-  font-size: 200px;
   font-family: 'Lucida Handwriting';
   color: white;
   font-weight: 800
+}
+
+.beranda-text{
+  font-family: 'poppins';
 }
 
 .wisata{
