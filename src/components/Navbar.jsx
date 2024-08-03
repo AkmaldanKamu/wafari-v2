@@ -25,7 +25,7 @@ const MyNavbar = () => {
 
   return (
     <div
-      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 px-5 ease-in-out text-white ${
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 p-5 px-5 ease-in-out text-white ${
         isSticky ? 'bg-transparent backdrop-blur-md opacity-95 shadow-md ' : 'opacity-100 '
       }`}
     > 

@@ -53,6 +53,10 @@ nav{
   font-weight: 800
 }
 
+.beranda-text{
+  font-family: 'poppins';
+}
+
 .wisata{
   height: 100vh;
 }

@@ -1,9 +1,9 @@
 import "./App.css";
 import Navbars from "./components/Navbar";
-import Wisata from "./components/Wisata";
 import Banner from "./Pages/Banner";
 import Isi from "./components/Isi";
 import Beranda from "./Pages/Beranda";
+import { Options } from "./components/Models/Options";
 
 function App() {
   return (
@@ -14,6 +14,9 @@ function App() {
         <Isi />
       </div>
       <Beranda/>
+      <Options text="Tes" />
+      <Options text="Tessssssssss" />
+
     </div>
   );
 }
