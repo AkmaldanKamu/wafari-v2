@@ -43,7 +43,7 @@ const Navbars = () => {
               className="mr-3 h-6 sm:h-9"
               alt="Flowbite React Logo"
             />
-            <span className="self-center whitespace-nowrap text-xl font-semibold text-dark font-wafari opacity-100 ">
+            <span className="self-center whitespace-nowrap text-xl font-semibold text-dark font-wafari opacity-100 font-">
               WAFARI
             </span>
           </Navbar.Brand>
